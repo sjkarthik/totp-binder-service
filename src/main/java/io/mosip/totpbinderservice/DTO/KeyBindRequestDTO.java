@@ -10,6 +10,7 @@ import java.util.Map;
 
 public class KeyBindRequestDTO {
     private String key;
+    private String accessToken;
 
     public String getKey() {
         return key;
@@ -17,6 +18,14 @@ public class KeyBindRequestDTO {
 
     public void setKey(String key) {
         this.key = key;
+    }
+
+    public String getAccessToken() {
+        return accessToken;
+    }
+
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
     }
 
     public MultiValueMap<String, String> toMap() {
