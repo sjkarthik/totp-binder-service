@@ -42,8 +42,8 @@ ENV is_glowroot_env=${is_glowroot}
 # environment variable to pass artifactory url, at docker runtime
 ENV artifactory_url_env=${artifactory_url}
 
-# environment variable to pass Totp-binder-service_wrapper url(may be zip or jar), at docker runtime
-ENV Totp-binder-service_wrapper_url_env=${Totp-binder-service_wrapper_url}
+# environment variable to pass totp-binder-service_wrapper url(may be zip or jar), at docker runtime
+ENV totp-binder-service_wrapper_url_env=${totp-binder-service_wrapper_url}
 
 # environment variable to pass hsm client zip file path, at docker runtime
 ENV hsm_zip_file_path=${hsm_client_zip_path}
@@ -88,7 +88,7 @@ ADD configure_start.sh configure_start.sh
 
 RUN chmod +x configure_start.sh
 
-COPY ./target/Totp-binder-service-*.jar Totp-binder-service.jar
+COPY ./target/totp-binder-service-*.jar totp-binder-service.jar
 
 # change permissions of file inside working dir
 RUN chown -R ${container_user}:${container_user} /home/${container_user}
