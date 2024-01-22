@@ -9,6 +9,7 @@ LABEL commit_hash=${COMMIT_HASH}
 LABEL commit_id=${COMMIT_ID}
 LABEL build_time=${BUILD_TIME}
 
+
 # can be passed during Docker build as build time environment for github branch to pickup configuration from.
 ARG container_user=mosip
 
@@ -30,6 +31,14 @@ RUN apt-get -y update \
 # set working directory for the user
 WORKDIR /home/${container_user}
 
+ENV work_dir=/home/${container_user}
+
+ARG loader_path=${work_dir}/additional_jars/
+
+RUN mkdir -p ${loader_path}
+
+ENV loader_path_env=${loader_path}
+
 COPY ./target/totp-binder-service-*.jar totp-binder-service.jar
 
 # change permissions of file inside working dir
@@ -39,4 +48,4 @@ RUN chown -R ${container_user}:${container_user} /home/${container_user}
 USER ${container_user_uid}:${container_user_gid}
 
 EXPOSE 9099
-java -jar totp-binder-service.jar ;
+CMD ["java", "-jar" "totp-binder-service.jar"]
