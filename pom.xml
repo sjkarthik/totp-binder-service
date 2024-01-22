@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>io.mosip</groupId>
-	<artifactId>Totp-binder-service</artifactId>
+	<artifactId>totp-binder-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Totp-binder-service</name>
+	<name>totp-binder-service</name>
 	<description>Backend Application for TOTP binding</description>
 	<properties>
 		<java.version>11</java.version>

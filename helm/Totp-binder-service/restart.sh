@@ -1,17 +1,17 @@
 #!/bin/bash
-# Restart the Totp-binder-service services
+# Restart the totp-binder-service services
 
 if [ $# -ge 1 ] ; then
   export KUBECONFIG=$1
 fi
 
-function Restarting_Totp-binder-service() {
-  NS=Totp-binder-service
-  kubectl -n $NS rollout restart deploy  Totp-binder-service
+function Restarting_totp-binder-service() {
+  NS=totp-binder-service
+  kubectl -n $NS rollout restart deploy  totp-binder-service
 
   kubectl -n $NS  get deploy -o name |  xargs -n1 -t  kubectl -n $NS rollout status
 
-  echo Retarted Totp-binder-service services
+  echo Retarted totp-binder-service services
   return 0
 }
 
@@ -21,4 +21,4 @@ set -o errexit   ## set -e : exit the script if any statement returns a non-true
 set -o nounset   ## set -u : exit the script if you try to use an uninitialised variable
 set -o errtrace  # trace ERR through 'time command' and other functions
 set -o pipefail  # trace ERR through pipes
-Restarting_Totp-binder-service   # calling function
+Restarting_totp-binder-service   # calling function

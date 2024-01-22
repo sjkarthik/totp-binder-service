@@ -4,12 +4,12 @@
 
 function copying_cm() {
   COPY_UTIL=../copy_cm_func.sh
-  DST_NS=Totp-binder-service
+  DST_NS=totp-binder-service
 
   $COPY_UTIL configmap global default $DST_NS
   $COPY_UTIL configmap artifactory-share artifactory $DST_NS
   $COPY_UTIL configmap config-server-share config-server $DST_NS
-  $COPY_UTIL configmap softhsm-Totp-binder-service-share softhsm $DST_NS
+  $COPY_UTIL configmap softhsm-totp-binder-service-share softhsm $DST_NS
   return 0
 }
 

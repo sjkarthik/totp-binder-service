@@ -1,28 +1,28 @@
 {{/*
 Return the proper  image name
 */}}
-{{- define "Totp-binder-service.image" -}}
+{{- define "totp-binder-service.image" -}}
 {{ include "common.images.image" (dict "imageRoot" .Values.image "global" .Values.global) }}
 {{- end -}}
 
 {{/*
 Return the proper image name (for the init container volume-permissions image)
 */}}
-{{- define "Totp-binder-service.volumePermissions.image" -}}
+{{- define "totp-binder-service.volumePermissions.image" -}}
 {{- include "common.images.image" ( dict "imageRoot" .Values.volumePermissions.image "global" .Values.global ) -}}
 {{- end -}}
 
 {{/*
 Return the proper Docker Image Registry Secret Names
 */}}
-{{- define "Totp-binder-service.imagePullSecrets" -}}
+{{- define "totp-binder-service.imagePullSecrets" -}}
 {{- include "common.images.pullSecrets" (dict "images" (list .Values.image .Values.volumePermissions.image) "global" .Values.global) -}}
 {{- end -}}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "Totp-binder-service.serviceAccountName" -}}
+{{- define "totp-binder-service.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create -}}
     {{ default (printf "%s" (include "common.names.fullname" .)) .Values.serviceAccount.name }}
 {{- else -}}
@@ -33,10 +33,10 @@ Create the name of the service account to use
 {{/*
 Compile all warnings into a single message.
 */}}
-{{- define "Totp-binder-service.validateValues" -}}
+{{- define "totp-binder-service.validateValues" -}}
 {{- $messages := list -}}
-{{- $messages := append $messages (include "Totp-binder-service.validateValues.foo" .) -}}
-{{- $messages := append $messages (include "Totp-binder-service.validateValues.bar" .) -}}
+{{- $messages := append $messages (include "totp-binder-service.validateValues.foo" .) -}}
+{{- $messages := append $messages (include "totp-binder-service.validateValues.bar" .) -}}
 {{- $messages := without $messages "" -}}
 {{- $message := join "\n" $messages -}}
 
@@ -48,7 +48,7 @@ Compile all warnings into a single message.
 {{/*
 Return podAnnotations
 */}}
-{{- define "Totp-binder-service.podAnnotations" -}}
+{{- define "totp-binder-service.podAnnotations" -}}
 {{- if .Values.podAnnotations }}
 {{ include "common.tplvalues.render" (dict "value" .Values.podAnnotations "context" $) }}
 {{- end }}

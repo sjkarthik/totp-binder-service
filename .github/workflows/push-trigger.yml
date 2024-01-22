@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      SERVICE_NAME: Totp-binder-service
+      SERVICE_NAME: totp-binder-service
       SERVICE_LOCATION: ''
     steps:
       - uses: actions/checkout@v2
@@ -79,7 +79,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NAMESPACE: ${{ secrets.dev_namespace_docker_hub }}
-      SERVICE_NAME: Totp-binder-service
+      SERVICE_NAME: totp-binder-service
       SERVICE_LOCATION: ''
 
     steps:
@@ -101,7 +101,7 @@ jobs:
           xml-file: ./${{ env.SERVICE_LOCATION }}/pom.xml
           xpath: /*[local-name()="project"]/*[local-name()="version"]
 
-      - name: Unzip and extract the Totp-binder-service
+      - name: Unzip and extract the totp-binder-service
         run: unzip -uj "release.zip" "target/*" -d "target/"
 
       - name: Get current date
@@ -144,7 +144,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     env:
-      SERVICE_NAME: Totp-binder-service
+      SERVICE_NAME: totp-binder-service
       SERVICE_LOCATION: ''
     steps:
       - uses: actions/checkout@v2

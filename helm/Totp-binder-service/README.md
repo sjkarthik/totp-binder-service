@@ -1,17 +1,17 @@
-# Totp-binder-service
+# totp-binder-service
 
-Helm chart for installing Totp-binder-service module.
+Helm chart for installing totp-binder-service module.
 
 ## TL;DR
 
 ```console
 $ helm repo add mosip https://mosip.github.io
-$ helm install my-release mosip/Totp-binder-service
+$ helm install my-release mosip/totp-binder-service
 ```
 
 ## Introduction
 
-Totp-binder-service is part of the Totp-binder-service modules, but has a separate Helm chart so as to install and manage it in a completely independent namespace.
+totp-binder-service is part of the totp-binder-service modules, but has a separate Helm chart so as to install and manage it in a completely independent namespace.
 
 ## Prerequisites
 
@@ -23,8 +23,8 @@ Totp-binder-service is part of the Totp-binder-service modules, but has a separa
 ## Overview
 Refer [Commons](https://docs.mosip.io/1.2.0/modules/commons).
 
-## Initialize keycloak for Totp-binder-service
-* To initialize keycloak for Totp-binder-service, run below script.
+## Initialize keycloak for totp-binder-service
+* To initialize keycloak for totp-binder-service, run below script.
   ```sh
   ./keycloak-init.sh
   ```

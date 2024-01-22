@@ -2,9 +2,9 @@
 # Copy secrets from other namespaces
 # DST_NS: Destination namespace
 function copying_secrets() {
-  COPY_UTIL=../Totp-binder-service/copy_cm_func.sh
-  #DST_NS=Totp-binder-service
-#  $COPY_UTIL secret Totp-binder-service-captcha Totp-binder-service config-server
+  COPY_UTIL=../totp-binder-service/copy_cm_func.sh
+  #DST_NS=totp-binder-service
+#  $COPY_UTIL secret totp-binder-service-captcha totp-binder-service config-server
 #  return 0
 }
 # set commands for error handling.

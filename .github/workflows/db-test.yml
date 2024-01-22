@@ -30,8 +30,8 @@ jobs:
     strategy:
       matrix:
         include:
-          - DB_LOCATION: 'db_scripts/mosip_Totp-binder-service'
-            DB_NAME: 'mosip_Totp-binder-service'
+          - DB_LOCATION: 'db_scripts/mosip_totp-binder-service'
+            DB_NAME: 'mosip_totp-binder-service'
       fail-fast: false
     name: ${{ matrix.DB_NAME }}
     uses: mosip/kattu/.github/workflows/db-test.yml@master

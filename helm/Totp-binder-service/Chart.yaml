@@ -1,6 +1,6 @@
 apiVersion: v2
-name: Totp-binder-service
-description: A Helm chart for MOSIP Totp-binder-service module
+name: totp-binder-service
+description: A Helm chart for MOSIP totp-binder-service module
 type: application
 version: 1.2.0
 appVersion: ""
@@ -13,7 +13,7 @@ dependencies:
 home: https://mosip.io
 keywords:
   - mosip
-  - Totp-binder-service
+  - totp-binder-service
 maintainers:
   - email: info@mosip.io
     name: MOSIP

@@ -52,7 +52,7 @@ service:
 
 image:
   registry: docker.io
-  repository: pramod444/Totp-binder-service
+  repository: pramod444/totp-binder-service
   tag: develop
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
@@ -75,7 +75,7 @@ springServicePort: 9099
 startupProbe:
   enabled: true
   httpGet:
-    path: /v1/Totp-binder-service/actuator/health
+    path: /v1/totp-binder-service/actuator/health
     port: 9099
   initialDelaySeconds: 0
   periodSeconds: 10
@@ -86,7 +86,7 @@ startupProbe:
 livenessProbe:
   enabled: true
   httpGet:
-    path: /v1/Totp-binder-service/actuator/health
+    path: /v1/totp-binder-service/actuator/health
     port: 9099
   initialDelaySeconds: 20
   periodSeconds: 10
@@ -97,7 +97,7 @@ livenessProbe:
 readinessProbe:
   enabled: true
   httpGet:
-    path: /v1/Totp-binder-service/actuator/health
+    path: /v1/totp-binder-service/actuator/health
     port: 9099
   initialDelaySeconds: 0
   periodSeconds: 10
@@ -248,7 +248,7 @@ extraEnvVarsCM:
   - global
   - config-server-share
   - artifactory-share
-  - softhsm-Totp-binder-service-share
+  - softhsm-totp-binder-service-share
 
 ## Secret with extra environment variables
 ##
@@ -397,7 +397,7 @@ metrics:
   podAnnotations:
     prometheus.io/scrape: "true"
 
-  endpointPath: /v1/Totp-binder-service/actuator/prometheus
+  endpointPath: /v1/totp-binder-service/actuator/prometheus
 
   ## Prometheus Service Monitor
   ## ref: https://github.com/coreos/prometheus-operator
@@ -444,13 +444,13 @@ metrics:
     #       severity: error
     rules: []
 
-Totp-binder-service:
+totp-binder-service:
 ## Only internal access
 istio:
   enabled: true
   gateways:
     - istio-system/public
     - istio-system/internal
-  prefix: /v1/Totp-binder-service/
+  prefix: /v1/totp-binder-service/
 
 enable_insecure: false
