@@ -21,7 +21,7 @@ import java.util.Date;
 
 public class JWTGenerator {
 
-    public static String generateSignedJwt(String clientId, String jwtAlgorithm, String jwtExpirationTime, String clientPrivateKey, String esignetServiceUrl) throws JOSEException, NoSuchAlgorithmException, InvalidKeySpecException, ParseException {
+    public static String generateSignedJwt(String clientId, String jwtAlgorithm, String jwtExpirationTime, String clientPrivateKey, String Totp-binder-serviceServiceUrl) throws JOSEException, NoSuchAlgorithmException, InvalidKeySpecException, ParseException {
         // Parse the private key
         RSAPrivateKey privateKey = parsePrivateKey(clientPrivateKey);
 
@@ -34,7 +34,7 @@ public class JWTGenerator {
         JWTClaimsSet claimsSet = new JWTClaimsSet.Builder()
                 .issuer(clientId)
                 .subject(clientId)
-                .audience(esignetServiceUrl)
+                .audience(Totp-binder-serviceServiceUrl)
                 .issueTime(new Date())
                 .expirationTime(new Date(System.currentTimeMillis() + parseExpirationTime(jwtExpirationTime)))
                 .build();
