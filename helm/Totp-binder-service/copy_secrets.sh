@@ -3,7 +3,7 @@
 # DST_NS: Destination namespace
 function copying_secrets() {
   COPY_UTIL=../totp-binder-service/copy_cm_func.sh
-  #DST_NS=totp-binder-service
+  #DST_NS=totp
 #  $COPY_UTIL secret totp-binder-service-captcha totp-binder-service config-server
 #  return 0
 }

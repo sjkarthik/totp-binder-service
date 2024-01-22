@@ -6,7 +6,7 @@ if [ $# -ge 1 ] ; then
 fi
 
 function Restarting_totp-binder-service() {
-  NS=totp-binder-service
+  NS=totp
   kubectl -n $NS rollout restart deploy  totp-binder-service
 
   kubectl -n $NS  get deploy -o name |  xargs -n1 -t  kubectl -n $NS rollout status

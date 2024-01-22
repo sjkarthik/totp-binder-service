@@ -7,7 +7,7 @@ if [ $# -ge 1 ] ; then
 fi
 
 function Deleting_totp-binder-service() {
-  NS=totp-binder-service
+  NS=totp
   while true; do
       read -p "Are you sure you want to delete all totp-binder-service helm charts?(Y/n) " yn
       if [ $yn = "Y" ]

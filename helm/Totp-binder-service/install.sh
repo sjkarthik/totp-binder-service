@@ -6,10 +6,10 @@ if [ $# -ge 1 ] ; then
   export KUBECONFIG=$1
 fi
 
-NS=totp-binder-service
+NS=totp
 CHART_VERSION=1.2.0
 
-totp-binder-service_HOST=$(kubectl get cm global -o jsonpath={.data.mosip-totp-binder-service-host})
+TOTP_BINDER_SERVICE_HOST=$(kubectl get cm global -o jsonpath={.data.mosip-totp-binder-service-host})
 
 echo Create $NS namespace
 kubectl create ns $NS
@@ -59,7 +59,7 @@ function installing_totp-binder-service() {
   fi
 
   echo Installing totp-binder-service
-  helm -n $NS install totp-binder-service mosip/totp-binder-service --version $CHART_VERSION $ENABLE_INSECURE
+  helm -n $NS install totp-binder-service /mnt/c/Users/pramod.b/IdeaProjects/Totp-binder-service/helm/Totp-binder-service --version $CHART_VERSION $ENABLE_INSECURE
 
   kubectl -n $NS  get deploy -o name |  xargs -n1 -t  kubectl -n $NS rollout status
 

@@ -3,8 +3,8 @@
 # DST_NS: Destination namespace 
 
 function copying_cm() {
-  COPY_UTIL=../copy_cm_func.sh
-  DST_NS=totp-binder-service
+  COPY_UTIL=./copy_cm_func.sh
+  DST_NS=totp
 
   $COPY_UTIL configmap global default $DST_NS
   $COPY_UTIL configmap artifactory-share artifactory $DST_NS
