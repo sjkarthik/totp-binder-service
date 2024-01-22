@@ -48,4 +48,4 @@ RUN chown -R ${container_user}:${container_user} /home/${container_user}
 USER ${container_user_uid}:${container_user_gid}
 
 EXPOSE 9099
-CMD ["java", "-jar" "totp-binder-service.jar"]
+CMD ["java","-jar","totp-binder-service.jar"]
