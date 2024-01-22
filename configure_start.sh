@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#Downloads the zip/jar totp-binder-service adapters
-wrapper_filename=$(basename "$totp-binder-service_wrapper_url_env")
-wget -q "${totp-binder-service_wrapper_url_env}" -O "${loader_path_env}"/"${wrapper_filename}"
+#Downloads the zip/jar Totp-binder-service adapters
+wrapper_filename=$(basename "$Totp-binder-service_wrapper_url_env")
+wget -q "${Totp-binder-service_wrapper_url_env}" -O "${loader_path_env}"/"${wrapper_filename}"
 if file "${loader_path_env}"/"${wrapper_filename}" | grep -q "Zip archive"; then
   echo "Downloaded wrapper file is a zip archive. Unzipping the ${wrapper_filename}"
   unzip "${loader_path_env}"/"${wrapper_filename}" -d "${loader_path_env}"

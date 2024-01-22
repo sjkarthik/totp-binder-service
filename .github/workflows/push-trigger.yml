@@ -9,8 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      SERVICE_NAME: totp-binder
-      SERVICE_LOCATION: totp-binder-service
+      SERVICE_NAME: Totp-binder
+      SERVICE_LOCATION: Totp-binder-service
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 11
@@ -72,13 +72,13 @@ jobs:
   #        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }} # required
   #      if: failure() # Pick up events even if the job fails or is canceled.
 
-  docker-totp-binder:
+  docker-Totp-binder:
     needs: build
     runs-on: ubuntu-latest
     env:
       NAMESPACE: ${{ secrets.dev_namespace_docker_hub }}
-      SERVICE_NAME: totp-binder
-      SERVICE_LOCATION: totp-binder-service
+      SERVICE_NAME: Totp-binder
+      SERVICE_LOCATION: Totp-binder-service
 
     steps:
       - uses: actions/checkout@v2
@@ -99,7 +99,7 @@ jobs:
           xml-file: ./${{ env.SERVICE_LOCATION }}/pom.xml
           xpath: /*[local-name()="project"]/*[local-name()="version"]
 
-      - name: Unzip and extract the totp-binder-service
+      - name: Unzip and extract the Totp-binder-service
         run: unzip -uj "release.zip" "${{ env.SERVICE_LOCATION }}/target/*" -d "./${{ env.SERVICE_LOCATION }}/target"
 
       - name: Get current date
@@ -142,8 +142,8 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     env:
-      SERVICE_NAME: totp-binder
-      SERVICE_LOCATION: totp-binder-service
+      SERVICE_NAME: Totp-binder
+      SERVICE_LOCATION: Totp-binder-service
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 11
