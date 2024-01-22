@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SERVICE_NAME: Totp-binder-service
-      SERVICE_LOCATION: ./
+      SERVICE_LOCATION: ''
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 11
@@ -80,7 +80,7 @@ jobs:
     env:
       NAMESPACE: ${{ secrets.dev_namespace_docker_hub }}
       SERVICE_NAME: Totp-binder-service
-      SERVICE_LOCATION: ./
+      SERVICE_LOCATION: ''
 
     steps:
       - uses: actions/checkout@v2
@@ -145,7 +145,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SERVICE_NAME: Totp-binder-service
-      SERVICE_LOCATION: ./
+      SERVICE_LOCATION: ''
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 11
