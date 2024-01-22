@@ -88,7 +88,7 @@ ADD configure_start.sh configure_start.sh
 
 RUN chmod +x configure_start.sh
 
-COPY ./target/Totp-binder-service-*.jar Totp-binder-service.jar
+COPY ./target/totp-binder-service-*.jar Totp-binder-service.jar
 
 # change permissions of file inside working dir
 RUN chown -R ${container_user}:${container_user} /home/${container_user}
