@@ -39,6 +39,4 @@ RUN chown -R ${container_user}:${container_user} /home/${container_user}
 USER ${container_user_uid}:${container_user_gid}
 
 EXPOSE 9099
-
-CMD wget -q --show-progress "${iam_adapter_url_env}" -O totp-binder-service.jar; \
-	java -jar totp-binder-service.jar ; \
+java -jar totp-binder-service.jar ;
