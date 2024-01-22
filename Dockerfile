@@ -43,7 +43,7 @@ ENV is_glowroot_env=${is_glowroot}
 ENV artifactory_url_env=${artifactory_url}
 
 # environment variable to pass totp-binder-service_wrapper url(may be zip or jar), at docker runtime
-ENV totp-binder-service_wrapper_url_env=${totp-binder-service_wrapper_url}
+ENV totp_binder_service_wrapper_url_env=${totp_binder_service_wrapper_url}
 
 # environment variable to pass hsm client zip file path, at docker runtime
 ENV hsm_zip_file_path=${hsm_client_zip_path}
