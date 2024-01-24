@@ -2,11 +2,11 @@ package io.mosip.totpbinderservice.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import io.mosip.totpbinderservice.DTO.AccessTokenResponse;
-import io.mosip.totpbinderservice.DTO.KeyBindRequestDTO;
-import io.mosip.totpbinderservice.DTO.KeyBindResponseDTO;
-import io.mosip.totpbinderservice.DTO.RequestWrapper;
-import io.mosip.totpbinderservice.DTO.ResponseWrapper;
+import io.mosip.totpbinderservice.dto.AccessTokenResponse;
+import io.mosip.totpbinderservice.dto.KeyBindRequestDTO;
+import io.mosip.totpbinderservice.dto.KeyBindResponseDTO;
+import io.mosip.totpbinderservice.dto.RequestWrapper;
+import io.mosip.totpbinderservice.dto.ResponseWrapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

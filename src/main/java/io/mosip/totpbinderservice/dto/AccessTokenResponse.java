@@ -1,4 +1,4 @@
-package io.mosip.totpbinderservice.DTO;
+package io.mosip.totpbinderservice.dto;
 
 public class AccessTokenResponse {
 

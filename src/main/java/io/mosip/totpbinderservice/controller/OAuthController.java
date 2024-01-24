@@ -3,8 +3,8 @@ package io.mosip.totpbinderservice.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.nimbusds.jose.JOSEException;
 
-import io.mosip.totpbinderservice.DTO.*;
 import io.mosip.totpbinderservice.helper.JWTGenerator;
+import io.mosip.totpbinderservice.dto.*;
 import io.mosip.totpbinderservice.helper.Constants;
 
 import org.springframework.beans.factory.annotation.Autowired;
