@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: global
+  namespace: totp
+data:
+  mosip-totp-binder-service-host: totp-binder-service.onpremdev.idencode.link
