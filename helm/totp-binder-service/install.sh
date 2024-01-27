@@ -7,7 +7,7 @@ if [ $# -ge 1 ] ; then
 fi
 
 NS=totp
-CHART_VERSION=develop
+CHART_VERSION=1.2.0
 
 TOTP_BINDER_SERVICE_HOST=$(kubectl get cm global -o jsonpath={.data.mosip-totp-binder-service-host})
 
