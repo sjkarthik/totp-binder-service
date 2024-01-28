@@ -9,8 +9,6 @@ fi
 NS=totp
 CHART_VERSION=1.2.0
 
-TOTP_BINDER_SERVICE_HOST=$(kubectl get cm global -o jsonpath={.data.mosip-totp-binder-service-host})
-
 echo Create $NS namespace
 kubectl create ns $NS
 
@@ -20,10 +18,12 @@ function installing_totp-binder-service() {
   echo Copy configmaps
   ./copy_cm.sh
 
+  kubectl -n totp set env --keys=mosip-totp-binder-service-host --value=totp-binder-service.onpremdev.idencode.link --from ConfigMaps/default
+
+  TOTP_BINDER_SERVICE_HOST=$(kubectl get cm global -o jsonpath={.data.mosip-totp-binder-service-host})
+
 #  echo copy secrets
 #  ./copy_secrets.sh
-
-  kubectl apply -f configmap.yaml
 
   echo Installing totp-binder-service
   helm -n $NS install totp-binder-service $HOME/totp-binder-service/helm/totp-binder-service --version $CHART_VERSION
