@@ -26,7 +26,7 @@ function installing_totp-binder-service() {
   kubectl apply -f configmap.yaml
 
   echo Installing totp-binder-service
-  helm -n $NS install totp-binder-service $HOME/totp-binder-ui/helm/totp-binder-service/Totp-binder-service --version $CHART_VERSION
+  helm -n $NS install totp-binder-service $HOME/totp-binder-service/helm/totp-binder-service/totp-binder-service --version $CHART_VERSION
 
   kubectl -n $NS  get deploy -o name |  xargs -n1 -t  kubectl -n $NS rollout status
 
