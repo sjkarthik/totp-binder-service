@@ -18,8 +18,6 @@ function installing_totp-binder-service() {
   echo Copy configmaps
   ./copy_cm.sh
 
-  kubectl -n totp set env --keys=mosip-totp-binder-service-host --value=totp-binder-service.onpremdev.idencode.link --from ConfigMaps/global
-
   TOTP_BINDER_SERVICE_HOST=$(kubectl get cm global -o jsonpath={.data.mosip-totp-binder-service-host})
 
 #  echo copy secrets
